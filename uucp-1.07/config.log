@@ -1,0 +1,176 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:785: checking for a BSD compatible install
+configure:838: checking whether build environment is sane
+configure:909: checking for mawk
+configure:939: checking whether make sets ${MAKE}
+configure:1059: checking whether to enable maintainer-specific portions of Makefiles
+configure:1157: checking for gcc
+configure:1270: checking whether the C compiler (gcc  ) works
+configure:1286: gcc -o conftest    conftest.c  1>&5
+configure:1283:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ 1283 | main(){return(0);}
+      | ^~~~
+configure:1312: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1317: checking whether we are using GNU C
+configure:1345: checking whether gcc accepts -g
+configure:1384: checking for style of include used by make
+configure:1418: checking dependency style of gcc
+configure:1485: checking how to run the C preprocessor
+configure:1566: checking whether gcc needs -traditional
+configure:1638: checking for ranlib
+configure:1666: checking for POSIXized ISC
+configure:1688: checking for minix/config.h
+configure:1736: checking for AIX
+configure:1760: checking for getpwnam in -lsun
+configure:1807: checking for working const
+configure:1882: checking for prototypes
+configure:1917: checking whether #! works in shell scripts
+configure:1940: checking for echo
+configure:1955: checking whether ln -s works
+configure:1979: checking for stddef.h
+configure:1979: checking for stdarg.h
+configure:1979: checking for string.h
+configure:1979: checking for strings.h
+configure:1979: checking for unistd.h
+configure:1979: checking for stdlib.h
+configure:2019: checking for limits.h
+configure:2019: checking for time.h
+configure:2019: checking for sys/wait.h
+configure:2019: checking for sys/ioctl.h
+configure:2019: checking for memory.h
+configure:2019: checking for termios.h
+configure:2059: checking for fcntl.h
+configure:2059: checking for sys/file.h
+configure:2059: checking for sys/time.h
+configure:2059: checking for sys/times.h
+configure:2059: checking for libc.h
+configure:2099: checking for sysexits.h
+configure:2099: checking for poll.h
+configure:2099: checking for tiuser.h
+configure:2099: checking for xti.h
+configure:2099: checking for sys/tli.h
+configure:2099: checking for stropts.h
+configure:2099: checking for ftw.h
+configure:2139: checking for glob.h
+configure:2139: checking for sys/param.h
+configure:2139: checking for sys/types.tcp.h
+configure:2139: checking for sys/mount.h
+configure:2139: checking for sys/vfs.h
+configure:2179: checking for sys/filsys.h
+configure:2179: checking for sys/statfs.h
+configure:2179: checking for sys/dustat.h
+configure:2179: checking for sys/fs_types.h
+configure:2179: checking for ustat.h
+configure:2219: checking for sys/statvfs.h
+configure:2219: checking for sys/termiox.h
+configure:2258: checking for dirent.h
+configure:2292: checking for utime.h
+configure:2328: checking for sys/select.h
+configure:2363: checking whether sys/types.h defines makedev
+configure:2393: checking for sys/mkdev.h
+configure:2431: checking for sys/sysmacros.h
+configure:2469: checking return type of signal handlers
+configure:2510: checking whether stat file-mode macros are broken
+configure:2566: checking whether time.h and sys/time.h may both be included
+configure:2601: checking whether struct tm is in sys/time.h or time.h
+configure:2635: checking whether termios.h and sys/ioctl.h may both be included
+configure:2668: checking for CBREAK
+configure:2700: checking for pid_t in sys/types.h
+configure:2732: checking for uid_t in sys/types.h
+configure:2764: checking for gid_t in sys/types.h
+configure:2796: checking for off_t in sys/types.h
+configure:2828: checking for sig_atomic_t in signal.h
+configure:2860: checking for sig_atomic_t in sys/types.h
+configure:2893: checking for size_t in stddef.h
+configure:2926: checking for size_t in sys/types.h
+configure:2958: checking for time_t in time.h
+configure:2990: checking time_t in sys/types.h
+configure:3022: checking for void
+configure:3054: checking for unsigned char
+configure:3086: checking for errno declaration
+configure:3118: checking for TXADDCD
+configure:3150: checking for memset
+configure:3182: checking for memcmp
+configure:3214: checking for memcpy
+configure:3249: checking for memchr
+configure:3249: checking for bcopy
+configure:3249: checking for bcmp
+configure:3249: checking for bzero
+configure:3304: checking for strchr
+configure:3304: checking for strrchr
+configure:3304: checking for index
+configure:3304: checking for rindex
+configure:3304: checking for strerror
+configure:3304: checking for strtol
+configure:3304: checking for strtoul
+configure:3304: checking for strstr
+configure:3359: checking for strdup
+configure:3359: checking for strcasecmp
+configure:3359: checking for strncasecmp
+configure:3359: checking for stricmp
+configure:3359: checking for strnicmp
+configure:3414: checking for bsearch
+configure:3414: checking for vfprintf
+configure:3469: checking for remove
+configure:3469: checking for ftruncate
+configure:3469: checking for ltrunc
+configure:3469: checking for rename
+configure:3469: checking for opendir
+configure:3469: checking for dup2
+configure:3469: checking for waitpid
+configure:3469: checking for wait4
+configure:3524: checking for sigsetjmp
+configure:3524: checking for setret
+configure:3524: checking for sigaction
+configure:3524: checking for sigvec
+configure:3524: checking for sigset
+configure:3579: checking for sigprocmask
+configure:3579: checking for sigblock
+configure:3579: checking for sighold
+configure:3579: checking for getdtablesize
+configure:3579: checking for sysconf
+configure:3634: checking for setpgrp
+configure:3634: checking for setsid
+configure:3634: checking for setreuid
+configure:3634: checking for seteuid
+configure:3634: checking for gethostname
+configure:3634: checking for uname
+configure:3689: checking for gettimeofday
+configure:3689: checking for ftw
+configure:3689: checking for glob
+configure:3689: checking for dev_info
+configure:3689: checking for getaddrinfo
+configure:3742: checking for getdelim
+configure:3785: checking for getline
+configure:3842: checking for ftime
+configure:3885: checking that ftime works correctly
+configure:3952: checking for times
+configure:4007: checking for napms
+configure:4007: checking for nap
+configure:4007: checking for usleep
+configure:4007: checking for poll
+configure:4007: checking for select
+configure:4070: checking for getgrent
+configure:4125: checking for main in -lnsl_s
+configure:4171: checking for main in -lnsl
+configure:4217: checking for socket in -lsocket
+configure:4267: checking for t_open in -lxti
+configure:4317: checking for socket
+configure:4317: checking for t_open
+configure:4372: checking for getcwd
+configure:4372: checking for getwd
+configure:4437: checking for mkdir
+configure:4510: checking for rmdir
+configure:4672: checking how to get filesystem space usage
+configure:4682: checking for statvfs
+configure:5129: checking for times declared as long
+configure:5173: checking for getpwnam declared as struct passwd *
+configure:5217: checking for getpwuid declared as struct passwd *
+configure:5261: checking for getgrent declared as struct group *
+configure:5305: checking for BSD setpgrp
+configure:5339: checking for union wait
+configure:5374: checking for struct sockaddr_storage
+configure:5416: checking for restartable system calls
+configure:5465: checking for long file names

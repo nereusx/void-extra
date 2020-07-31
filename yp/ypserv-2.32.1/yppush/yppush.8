@@ -1,0 +1,127 @@
+'\" t
+.\"     Title: yppush
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 10/07/2013
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"  Language: English
+.\"
+.TH "YPPUSH" "8" "10/07/2013" "NIS Reference Manual" "NIS Reference Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+yppush \- force propagation of changed NIS databases
+.SH "SYNOPSIS"
+.HP \w'\fB/usr/sbin/yppush\fR\ 'u
+\fB/usr/sbin/yppush\fR [\-d\ \fIdomain\fR] [\-t\ \fItimeout\fR] [\-\-parallel\ \fI#\fR | \-\-port\ \fIport\fR] [\-h\ \fIhost\fR] [\-v] \fImapname\fR...
+.SH "DESCRIPTION"
+.PP
+\fByppush\fR
+copies updated NIS databases (or maps) from the master NIS server to the slave servers within a NIS domain\&. It is normally run only on the NIS master by
+\fI/var/yp/Makefile\fR
+after the master databases are changed\&.
+\fI/var/yp/Makefile\fR
+does not invoke
+\fByppush\fR
+by default, the
+\fBNOPUSH=true\fR
+line must be commented out\&.
+\fByppush\fR
+first constructs a list of NIS slave servers by reading the NIS map
+\fBypservers\fR
+within the
+\fIdomain\&.\fR
+A destination host (or a list of hosts with multiple \-h commands) can also be specified on the command line\&. A "transfer map" request is sent to the NIS server at each slave, along with the information needed by the transfer agent ypxfr(8) to callback to yppush, which may be printed the result to stderr\&. Messages are also printed when a transfer is not possible; for instance when the request message is undeliverable\&.
+.PP
+To specify a port number or use any other
+\fByppush\fR
+options you can edit
+\fI/var/yp/Makefile\fR
+directly\&.
+.SH "OPTIONS"
+.PP
+\fB\-d \fR\fIdomain\fR
+.RS 4
+Specify a particular domain\&. The NIS domain of the local host system is used by default\&. If the local host\*(Aqs domain name is not set, the domain name must be specified with this flag\&.
+.RE
+.PP
+\fB\-t \fR\fItimeout\fR
+.RS 4
+The timeout flag is used to specify a timeout value in seconds\&. This timeout controls how long
+\fByppush\fR
+will wait for a response from a slave server before sending a map transfer request to the next slave server in the list\&. By default,
+\fByppush\fR
+will wait 90 seconds\&. For big maps, this is not long enough\&.
+.RE
+.PP
+\fB\-\-parallel\fR\fI #\fR,\fB \-p \fR\fI#\fR
+.RS 4
+\fByppush\fR
+normally performs transfers serially, meaning that it will send a map transfer request to one slave server and then wait for it to respond before sending the next map transfer request to the next slave server\&. In environments with many slaves, it is more efficient to initiate several map transfers at once so that the transfers can take place in parallel\&. It is not possible to run in parallel and assign a fixed port with the
+\fB\-\-port\fR
+flag
+.RE
+.PP
+\fB\-\-port \fR\fIport\fR
+.RS 4
+specify a port for
+\fByppush\fR
+to listen on\&. By default,
+\fByppush\fR
+will ask
+\fBportmap(8)\fR
+to assign it a random port number\&. It is not possible to assign a port with this option and run in parallel with the
+\fB\-\-parallel\fR
+or
+\fB\-p\fR
+flag
+.RE
+.PP
+\fB\-h \fR\fIhost\fR
+.RS 4
+The host flag can be used to transfer a map to a user\-specified machine or group of machines instead of the list of servers contained in the
+\fBypservers\fR
+map\&. A list of hosts can be specified by using multiple instances of the
+\fB\-h\fR
+flag\&.
+.RE
+.PP
+\fB\-v\fR
+.RS 4
+Verbose mode: causes
+\fByppush\fR
+to print debugging messages as it runs\&. Note specifying this flag twice makes
+\fByppush\fR
+even more verbose\&.
+.RE
+.SH "SEE ALSO"
+.PP
+\fBdomainname\fR(1),
+\fBypserv\fR(8),
+\fBypxfr\fR(8)
+.SH "BUGS"
+.PP
+The mechanism for transferring NIS maps in NIS v1 is different that that in NIS version 2\&. This version of
+\fByppush\fR
+has support for transferring maps to NIS v2 systems only\&.
+.SH "AUTHOR"
+.PP
+Thorsten Kukuk <kukuk@linux\-nis\&.org>

@@ -1,0 +1,44 @@
+.\"     Title: PWUPDATE
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.73.1 <http://docbook.sf.net/>
+.\"      Date: 10/01/2007
+.\"    Manual: NYS YP Server
+.\"    Source: Jan 1998
+.\"
+.TH "PWUPDATE" "8" "10/01/2007" "Jan 1998" "NYS YP Server"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+pwupdate - updates passwd and shadow NIS map
+.SH "SYNOPSIS"
+.HP 21
+\fB/usr/lib/yp/pwupdate\fR [\fIshadow\fR]
+.SH "DESCRIPTION"
+.PP
+\fBpwupdate\fR
+is invoked by
+\fBrpc.yppasswdd\fR(8)
+after changing the password and it should update the passwd and shadow NIS map\. Never run it by hand\.
+.SH "OPTIONS"
+.PP
+\fBshadow\fR
+.RS 4
+Normally, only the passwd map will be updated\. With this option,
+\fBpwupdate\fR
+will update the shadow map, too\.
+.RE
+.SH "FILES"
+.PP
+\fI/etc/passwd\fR, \fI/etc/shadow\fR
+.RS 4
+.RE
+.SH "SEE ALSO"
+.PP
+\fBrpc.yppasswdd\fR(8),
+\fBypserv\fR(8)
+.SH "AUTHOR"
+.PP
+Olaf Kirch <okir@monad\.swb\.de>,
+Thorsten Kukuk <kukuk@suse\.de>

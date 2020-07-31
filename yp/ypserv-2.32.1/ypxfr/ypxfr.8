@@ -1,0 +1,323 @@
+.\"     Title: ypxfr
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
+.\"      Date: 04/02/2009
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"  Language: English
+.\"
+.TH "YPXFR" "8" "04/02/2009" "NIS Reference Manual" "NIS Reference Manual"
+.\" -----------------------------------------------------------------
+.\" * (re)Define some macros
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" toupper - uppercase a string (locale-aware)
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de toupper
+.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
+\\$*
+.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH-xref - format a cross-reference to an SH section
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de SH-xref
+.ie n \{\
+.\}
+.toupper \\$*
+.el \{\
+\\$*
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SH - level-one heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SH
+.\" put an extra blank line of space above the head in non-TTY output
+.if t \{\
+.sp 1
+.\}
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[an-margin]u
+.ti 0
+.HTML-TAG ".NH \\n[an-level]"
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+\." make the size of the head bigger
+.ps +3
+.ft B
+.ne (2v + 1u)
+.ie n \{\
+.\" if n (TTY output), use uppercase
+.toupper \\$*
+.\}
+.el \{\
+.nr an-break-flag 0
+.\" if not n (not TTY), use normal case (not uppercase)
+\\$1
+.in \\n[an-margin]u
+.ti 0
+.\" if not n (not TTY), put a border/line under subheading
+.sp -.6
+\l'\n(.lu'
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" SS - level-two heading that works better for non-TTY output
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de1 SS
+.sp \\n[PD]u
+.nr an-level 1
+.set-an-margin
+.nr an-prevailing-indent \\n[IN]
+.fi
+.in \\n[IN]u
+.ti \\n[SN]u
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.ps \\n[PS-SS]u
+\." make the size of the head bigger
+.ps +2
+.ft B
+.ne (2v + 1u)
+.if \\n[.$] \&\\$*
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BB/BE - put background/screen (filled box) around block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BB
+.if t \{\
+.sp -.5
+.br
+.in +2n
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EB
+.if t \{\
+.if "\\$2"adjust-for-leading-newline" \{\
+.sp -1
+.\}
+.br
+.di
+.in
+.ll
+.gcolor
+.nr BW \\n(.lu-\\n(.i
+.nr BH \\n(dn+.5v
+.ne \\n(BHu+.5v
+.ie "\\$2"adjust-for-leading-newline" \{\
+\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.el \{\
+\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
+.\}
+.in 0
+.sp -.5v
+.nf
+.BX
+.in
+.sp .5v
+.fi
+.\}
+..
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" BM/EM - put colored marker in margin next to block of text
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.de BM
+.if t \{\
+.br
+.ll -2n
+.gcolor red
+.di BX
+.\}
+..
+.de EM
+.if t \{\
+.br
+.di
+.ll
+.gcolor
+.nr BH \\n(dn
+.ne \\n(BHu
+\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
+.in 0
+.nf
+.BX
+.in
+.fi
+.\}
+..
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "Name"
+ypxfr \- transfer NIS database from remote server to local host
+.SH "Synopsis"
+.fam C
+.HP \w'\fB/usr/lib/yp/ypxfr\fR\ 'u
+\fB/usr/lib/yp/ypxfr\fR [\-f] [\-c] [\-d\ \fItarget\fR\ \fIdomain\fR] [\-h\ \fIsource\fR\ \fIhost\fR] [\-s\ \fIsource\fR\ \fIdomain\fR] [\-C\ \fItaskid\fR\ \fIprogram\-number\fR\ \fIipaddr\fR\ \fIport\fR] [\-p\ \fIyp_path\fR] \fImapname\fR...
+.br
+
+.fam
+.SH "DESCRIPTION"
+.PP
+\fBypxfr\fR
+copies an NIS database from one NIS server to the local host by using the NIS service\&.
+\fBypxfr\fR
+is generally invoked by
+\fBypinit\fR
+or by
+\fBypserv,\fR
+when
+\fBypserv\fR
+receives a map transfer request from
+\fByppush\&.\fR
+It creates a temporary map in the directory
+\FC/var/yp/domain\F[]
+(this directory must already exist;
+\fIdomain\fR
+is the default domainname for the local host), fills it by getting the map\'s entries and fetches the map parameters (master and order number)\&. If the transfer was successful, the old version of the map will be deleted and the temporary copy will be moved into its place\&. Then,
+\fBypxfr\fR
+will attempt to send a "clear current map" request to the local
+\fBypserv\&.\fR
+.PP
+If run interactively,
+\fBypxfr\fR
+writes its output to stderr\&. However, if it is invoked without a controlling terminal, it will log the output to syslog\&.
+.PP
+\fBypxfr\fR
+is used primarily in environments where several NIS servers are in use\&. For all maps, you have a NIS master server, which maintains a canonical copy of the NIS map, and all the other servers, the NIS slaves, copy the new version of the map from the master whenever a update was made\&. Normally, you have one NIS master for all maps\&.
+.PP
+In order to maintain consistency across all NIS servers,
+\fBypxfr\fR
+can be run periodically in a
+\fBcron\fR
+job\&. Maps which change infrequently need only be updated once a day (preferably late at night when system usage is lowest), where those with frequent changes (such as
+\fIpasswd\&.byname\fR
+and
+\fIpasswd\&.byuid )\fR
+should be updated perhaps once every hour\&. Examples are in
+\FC/usr/lib/yp: ypxfr_1perday, ypxfr_2perday,\F[]
+and
+\fBypxfr_1perhour\&.\fR
+They can serve as reasonable first cuts\&.
+.PP
+Normally all updates should be propagated by
+\fByppush\fR
+when
+\FC/var/yp/Makefile\F[]
+is run on the NIS master server, however it is a good practice on large networks where possible outages could cause NIS slaves to fall out of sync with the master\&.
+.SH "OPTIONS"
+.PP
+The following options are supported:
+.PP
+\fB\-f\fR
+.RS 4
+Force a map transfer\&. Normally,
+\fBypxfr\fR
+will not transfer a map if it determines that the NIS master\'s copy is not newer than the existing copy already on the local host\&. This flag forces a transfer regardless of which server\'s version is more recent\&.
+.RE
+.PP
+\fB\-c\fR
+.RS 4
+Do not send a "clear current map" request to the
+\fBypserv\fR
+process running on the local host\&. This flag is normally used when invoking
+\fBypxfr\fR
+by
+\fBypinit\fR
+or if
+\fBypserv\fR
+is not running locally at the time you are running
+\fBypxfr\&.\fR
+Otherwise,
+\fBypxfr\fR
+will complain that it cannot talk to the local
+\fBypserv,\fR
+and the transfer will fail\&.
+.RE
+.PP
+\fB\-d\fR\fI domain\fR
+.RS 4
+Specify a domain other than the default NIS domain\&.
+.RE
+.PP
+\fB\-h\fR\fI source host\fR
+.RS 4
+Get the map from
+\fIhost\fR, regardless of what the map says the master is\&. If
+\fIhost\fR
+is not specified,
+\fBypxfr\fR
+asks the
+NIS
+service for the name of the master, and tries to get the map from there\&. This option is used to insure that ypxfr only copies maps from the NIS master server\&.
+.RE
+.PP
+\fB\-s\fR\fI source domain\fR
+.RS 4
+Specify a source domain from which to transfer a map that should be the same across domains\&.
+.RE
+.PP
+\fB\-C\fR\fI taskid progam\-number ipaddr port\fR
+.RS 4
+This option is
+\fBonly\fR
+for use by
+\fBypserv \&.\fR
+When
+\fBypserv\fR
+invokes
+\fBypxfr\fR, it specifies that
+\fBypxfr\fR
+should call back a
+\fByppush\fR
+process at the host with
+IP
+address
+\fIipaddr\fR, registered as program number
+\fIprogam\-number\fR, listening on port
+\fIport\fR, and waiting for a response to transaction
+\fItaskid\fR\&.
+.RE
+.PP
+\fB\-p\fR\fI yp_path\fR
+.RS 4
+Change the directory for the maps to
+\fIyp_path/[domainname]/\fR, the default is
+\FC/var/yp/[domainname]\F[]\&.
+.RE
+.PP
+\fImapname\fR
+.RS 4
+One or more names of the map to transfer\&.
+.RE
+.SH "FILES"
+.PP
+/var/yp/[domainname]/[maps]
+.SH "SEE ALSO"
+.PP
+\fBypserv\fR(8),
+\fByppush\fR(8),
+\fBypinit\fR(8),
+\fBcron\fR(8),
+\fBcrontab\fR(5)
+.SH "AUTHOR"
+.PP
+Thorsten Kukuk <kukuk@linux\-nis\&.org>

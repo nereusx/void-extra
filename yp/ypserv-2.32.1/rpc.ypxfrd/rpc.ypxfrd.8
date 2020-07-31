@@ -1,0 +1,128 @@
+.\"     Title: rpc.ypxfrd
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.73.1 <http://docbook.sf.net/>
+.\"      Date: 04/15/2008
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"
+.TH "RPC\.YPXFRD" "8" "04/15/2008" "NIS Reference Manual" "NIS Reference Manual"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+rpc.ypxfrd - NIS map transfer server
+.SH "SYNOPSIS"
+.HP 21
+\fB/usr/sbin/rpc\.ypxfrd\fR [\-d\ \fIpath\fR] [\-p\ \fIport\fR] [\-\-debug] [\-f|\-\-foreground]
+.HP 21
+\fB/usr/sbin/rpc\.ypxfrd\fR \-\-version
+.SH "DESCRIPTION"
+.PP
+
+\fBrpc\.ypxfrd\fR
+is used for speed up the transfer of very large NIS maps from a NIS master to the NIS slave server\. If a NIS slave server receives a message that there is a new map, it will start
+\fBypxfr\fR
+for transfering the new map\.
+\fBypxfr\fR
+will read the contents of a map from the master server using the
+\fByp_all\fR() function\.
+.PP
+The
+\fBrpc\.ypxfrd\fR
+server speeds up the transfer process by allowing NIS slave servers to simply copy the master servers map files rather than building their own from scratch\.
+\fBrpc\.ypxfrd\fR
+uses an RPC\-based file transfer protocol\.
+.PP
+If the on\-disk format of the database on both machines is not the same,
+\fBrpc\.ypxfrd\fR
+will refuse to send the data and
+\fBypxfr\fR
+will fallback to
+\fByp_all\fR() and fetch every single entry alone\.
+.PP
+
+\fBrpc\.ypxfrd\fR
+could be started by inetd\. But since it starts very slowly, it should be started after
+\fBypserv\fR
+from
+\fB/etc/init\.d/ypxfrd\fR\.
+.SH "OPTIONS"
+.PP
+\fB\-\-debug\fR
+.RS 4
+Causes the server to run in debugging mode\. In debug mode, the server does not background itself and prints extra status messages to stderr for each request that it revceives\.
+.RE
+.PP
+\fB\-d\fR \fIpath\fR
+.RS 4
+
+\fBrpc\.ypxfrd\fR
+is using this directory instead of
+\fI/var/yp\fR\.
+.RE
+.PP
+\fB\-p\fR \fIport\fR
+.RS 4
+
+\fBrpc\.ypxfrd\fR
+will bind itself to this port, which makes it possible to have a router filter packets to the NIS ports\. This can restricted the access to the NIS server from hosts on the Internet\.
+.RE
+.PP
+\fB\-\-version\fR
+.RS 4
+Prints the version number
+.RE
+.PP
+\fB\-f\fR, \fB\-\-foreground\fR
+.RS 4
+will not put itself into background\&.
+.RE
+.SH "SECURITY"
+.PP
+
+\fBrpc\.ypxfrd\fR
+uses the same functions for checking a host as
+\fBypserv\fR\. At first,
+\fBrpc\.ypxfrd\fR
+will check a request from an address with
+\fI/var/yp/securenets\fR
+or the tcp wrapper\. If the host is allowed to connect to the server,
+\fBrpc\.ypxfrd\fR
+will uses the rules from
+\fI/etc/ypserv\.conf\fR
+to check the requested map\. If a mapname doesn\'t match a rule,
+\fBrpc\.ypxfrd\fR
+will look for the YP_SECURE key in the map\. If it exists,
+\fBrpc\.ypxfrd\fR
+will only allow requests on a reserved port\.
+.SH "NOTES"
+.PP
+The FreeBSD
+\fBypxfrd\fR
+protocol is not compatible with that used by SunOS\. This is unfortunate but unavoidable: SUNs protocol is not freely available, and even if it were it would probably not be useful since the SunOS NIS v2 implementation uses the original ndbm package for its map databases whereas the other implementation uses GNU DBM or Berkeley DB\. These packages uses vastly different file formats\. Furthermore, ndbm and gdbm are byte\-order and word width sensitive and not very smart about it, meaning that a gdbm or ndbm database created on a big endian or 64bit system cannot be read on a little endian or 32bit system\. The FreeBSD
+\fBypxfrd\fR
+protocol checks, if both, master and slave, uses the same database packages and, if necessary, the byte order of the system\.
+.SH "FILES"
+.PP
+\fI/etc/ypserv\.conf\fR
+.RS 4
+Configuration file for options and access rights
+.RE
+.PP
+\fI/var/yp/securenets\fR
+.RS 4
+Configuration file for access rights
+.RE
+.SH "SEE ALSO"
+.PP
+
+\fBypserv\fR(8),
+\fBmakedbm\fR(8),
+\fByppush\fR(8),
+\fBypxfr\fR(8)
+.SH "AUTHOR"
+.PP
+ypxfrd protocol and FreeBSD Implementation: Bill Paul <wpaul@ctr\.columbia\.edu>
+.PP
+Linux Implementation: Thorsten Kukuk <kukuk@linux\-nis\.org>

@@ -1,0 +1,74 @@
+.\"     Title: revnetgroup
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.73.1 <http://docbook.sf.net/>
+.\"      Date: 09/26/2007
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"
+.TH "REVNETGROUP" "8" "09/26/2007" "NIS Reference Manual" "NIS Reference Manual"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+revnetgroup - generate reverse netgroup data
+.SH "SYNOPSIS"
+.HP 24
+\fB/usr/lib/yp/revnetgroup\fR [\-u | \-h]
+.SH "DESCRIPTION"
+.PP
+
+\fBRevnetgroup\fR
+processes the standard input in
+\fBnetgroup\fR(5)
+format into what is called
+\fIreverse netgroup\fR
+form\. That is, where the original file shows netgroup memberships in terms of which members reside in a particular group, the reverse netgroup format specifies what groups are associated with a particular member\. This information is used to generate the
+\fInetgroup\.byuser\fR
+and
+\fInetgroup\.byhosts\fR
+NIS maps\. These reverse netgroup maps are used to help speed up netgroup lookups, particularly for the
+\fBinnetgr()\fR
+library function\.
+.PP
+The
+\fBrevnetgroup\fR
+command prints its results on the standard output\. It is usually called only by
+\fI/var/yp/Makefile\fR
+when rebuilding the NIS netgroup maps\.
+.SH "OPTIONS"
+.PP
+\fB\-u\fR
+.RS 4
+Generate
+\fInetgroup\.byuser\fR
+output; only username information in the original netgroup file is processed\.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Generate
+\fInetgroup\.byhost\fR
+output; only hostname information in the original netgroup file is processed\.
+.RE
+.SH "FILES"
+.PP
+\fI/var/yp/Makefile\fR
+.RS 4
+The Makefile to build the NIS databases\.
+.RE
+.PP
+\fI/etc/netgroup\fR
+.RS 4
+The default netgroup database file\. This file is most often found only on the NIS master server\.
+.RE
+.SH "SEE ALSO"
+.PP
+
+\fBgetnetgrent\fR(3),
+\fBnetgroup\fR(5),
+.SH "AUTHOR"
+.PP
+
+\fBrevnetgroup\fR
+was written by Thorsten Kukuk <kukuk@linux\-nis\.org>\.
