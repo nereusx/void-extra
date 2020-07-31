@@ -1,2 +1,2 @@
 # void-extra
-extra source-code packages for void
+extra source-code packages for void linux
