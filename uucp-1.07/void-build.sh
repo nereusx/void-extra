@@ -13,6 +13,10 @@ PKG=$TMP/package-uucp
 CFLAGS="-O2 -fPIC"
 UUCPID=500
 
+groupadd -f uucp -g $UUCPID
+useradd uucp -g uucp -u $UUCPID
+usermod uucp -g $UUCPID -s /sbin/nologin
+
 rm -rf $PKG
 mkdir -p $TMP $PKG
 
@@ -29,10 +33,6 @@ strip --strip-unneeded $PKG/usr/bin/* $PKG/usr/sbin/*
 gzip -9 $PKG/usr/man/man?/*
 gzip -9 $PKG/usr/info/*
 rm -f $PKG/usr/info/dir.gz
-
-groupadd -f uucp -g $UUCPID
-useradd uucp -g uucp -u $UUCPID
-usermod uucp -g $UUCPID -s /sbin/nologin
 
 # Setuid uucp binaries may only be run by members of the uucp group:
 ( cd $PKG/usr/bin
