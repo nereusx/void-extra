@@ -45,6 +45,9 @@ usermod uucp -g $UUCPID -s /sbin/nologin
 
 # install:
 #
-cp -a $PKG /
+cp -a $PKG/usr/bin/* /usr/bin/
+cp -a $PKG/usr/sbin/* /usr/bin/
+cp -a $PKG/usr/share/* /usr/share/
 [ -e /install ] && rm -rf /install
 rm -rf $PKG
+#echo $PKG

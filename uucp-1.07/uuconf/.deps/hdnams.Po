@@ -11,6 +11,7 @@ hdnams.o: hdnams.c /usr/include/stdc-predef.h uucnfi.h ../uucp.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/bits/stdio.h /usr/include/signal.h \
  /usr/include/bits/signum.h /usr/include/bits/signum-generic.h \
@@ -19,6 +20,7 @@ hdnams.o: hdnams.c /usr/include/stdc-predef.h uucnfi.h ../uucp.h \
  /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/types/siginfo_t.h /usr/include/bits/types/__sigval_t.h \
  /usr/include/bits/siginfo-arch.h /usr/include/bits/siginfo-consts.h \
+ /usr/include/bits/siginfo-consts-arch.h \
  /usr/include/bits/types/sigval_t.h /usr/include/bits/types/sigevent_t.h \
  /usr/include/bits/sigevent-consts.h /usr/include/bits/sigaction.h \
  /usr/include/bits/sigcontext.h /usr/include/bits/types/stack_t.h \
@@ -41,11 +43,12 @@ hdnams.o: hdnams.c /usr/include/stdc-predef.h uucnfi.h ../uucp.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
  /usr/include/bits/stdlib-float.h ../uuconf.h syshdr.h \
  /usr/include/fcntl.h /usr/include/bits/fcntl.h \
- /usr/include/bits/fcntl-linux.h /usr/include/bits/stat.h \
+ /usr/include/bits/fcntl-linux.h /usr/include/bits/types/struct_iovec.h \
+ /usr/include/linux/falloc.h /usr/include/bits/stat.h \
  /usr/include/errno.h /usr/include/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/ctype.h
+ /usr/include/bits/types/error_t.h /usr/include/ctype.h
 
 /usr/include/stdc-predef.h:
 
@@ -97,6 +100,8 @@ uucnfi.h:
 
 /usr/include/bits/types/struct_FILE.h:
 
+/usr/include/bits/types/cookie_io_functions_t.h:
+
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/sys_errlist.h:
@@ -124,6 +129,8 @@ uucnfi.h:
 /usr/include/bits/siginfo-arch.h:
 
 /usr/include/bits/siginfo-consts.h:
+
+/usr/include/bits/siginfo-consts-arch.h:
 
 /usr/include/bits/types/sigval_t.h:
 
@@ -217,6 +224,10 @@ syshdr.h:
 
 /usr/include/bits/fcntl-linux.h:
 
+/usr/include/bits/types/struct_iovec.h:
+
+/usr/include/linux/falloc.h:
+
 /usr/include/bits/stat.h:
 
 /usr/include/errno.h:
@@ -230,5 +241,7 @@ syshdr.h:
 /usr/include/asm-generic/errno.h:
 
 /usr/include/asm-generic/errno-base.h:
+
+/usr/include/bits/types/error_t.h:
 
 /usr/include/ctype.h:

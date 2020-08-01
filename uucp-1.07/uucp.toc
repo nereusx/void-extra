@@ -1,0 +1,116 @@
+\unnumbchapentry{Taylor UUCP 1.07}{1}
+\unnumbchapentry{Taylor UUCP Copying Conditions}{3}
+\chapentry{Introduction to Taylor UUCP}{1}{5}
+\chapentry{Invoking the UUCP Programs}{2}{9}
+\secentry{Standard Options}{2}{1}{9}
+\secentry{Invoking uucp}{2}{2}{9}
+\subsecentry{uucp Description}{2}{2}{1}{9}
+\subsecentry{uucp Options}{2}{2}{2}{10}
+\secentry{Invoking uux}{2}{3}{11}
+\subsecentry{uux Description}{2}{3}{1}{11}
+\subsecentry{uux Options}{2}{3}{2}{12}
+\subsecentry{uux Examples}{2}{3}{3}{14}
+\secentry{Invoking uustat}{2}{4}{14}
+\subsecentry{uustat Description}{2}{4}{1}{14}
+\subsecentry{uustat Options}{2}{4}{2}{15}
+\subsecentry{uustat Examples}{2}{4}{3}{18}
+\secentry{Invoking uuname}{2}{5}{19}
+\secentry{Invoking uulog}{2}{6}{19}
+\secentry{Invoking uuto}{2}{7}{21}
+\secentry{Invoking uupick}{2}{8}{21}
+\secentry{Invoking cu}{2}{9}{22}
+\subsecentry{cu Description}{2}{9}{1}{22}
+\subsecentry{cu Commands}{2}{9}{2}{22}
+\subsecentry{cu Variables}{2}{9}{3}{23}
+\subsecentry{cu Options}{2}{9}{4}{24}
+\secentry{Invoking uucico}{2}{10}{25}
+\subsecentry{uucico Description}{2}{10}{1}{25}
+\subsecentry{uucico Options}{2}{10}{2}{26}
+\secentry{Invoking uuxqt}{2}{11}{28}
+\secentry{Invoking uuchk}{2}{12}{29}
+\secentry{Invoking uuconv}{2}{13}{29}
+\secentry{Invoking uusched}{2}{14}{30}
+\chapentry{Installing Taylor UUCP}{3}{31}
+\secentry{Compiling Taylor UUCP}{3}{1}{31}
+\secentry{Testing the Compilation}{3}{2}{33}
+\secentry{Installing the Binaries}{3}{3}{34}
+\secentry{Configuring Taylor UUCP}{3}{4}{34}
+\secentry{Testing the Installation}{3}{5}{35}
+\chapentry{Using Taylor UUCP}{4}{37}
+\secentry{Calling Other Systems}{4}{1}{37}
+\secentry{Accepting Calls}{4}{2}{37}
+\secentry{Using UUCP for Mail and News.}{4}{3}{38}
+\subsecentry{Sending mail or news via UUCP}{4}{3}{1}{38}
+\subsecentry{Receiving mail or news via UUCP}{4}{3}{2}{39}
+\secentry{The Spool Directory Layout}{4}{4}{39}
+\subsecentry{System Spool Directories}{4}{4}{1}{39}
+\subsecentry{Status Directory}{4}{4}{2}{40}
+\subsecentry{Execution Subdirectories}{4}{4}{3}{41}
+\subsecentry{Other Spool Subdirectories}{4}{4}{4}{41}
+\subsecentry{Lock Files in the Spool Directory}{4}{4}{5}{42}
+\secentry{Cleaning the Spool Directory}{4}{5}{43}
+\chapentry{Taylor UUCP Configuration Files}{5}{45}
+\secentry{Configuration File Overview}{5}{1}{45}
+\secentry{Configuration File Format}{5}{2}{45}
+\secentry{Examples of Configuration Files}{5}{3}{46}
+\subsecentry{config File Examples}{5}{3}{1}{46}
+\subsecentry{Leaf Example}{5}{3}{2}{47}
+\subsecentry{Gateway Example}{5}{3}{3}{49}
+\secentry{Time Strings}{5}{4}{51}
+\secentry{Chat Scripts}{5}{5}{52}
+\secentry{The Main Configuration File}{5}{6}{55}
+\subsecentry{Miscellaneous config File Commands}{5}{6}{1}{55}
+\subsecentry{Configuration File Names}{5}{6}{2}{57}
+\subsecentry{Log File Names}{5}{6}{3}{59}
+\subsecentry{Debugging Levels}{5}{6}{4}{59}
+\secentry{The System Configuration File}{5}{7}{60}
+\subsecentry{Defaults and Alternates}{5}{7}{1}{61}
+\subsecentry{Naming the System}{5}{7}{2}{62}
+\subsecentry{Calling Out}{5}{7}{3}{62}
+\subsubsecentry{When to Call}{5}{7}{3}{1}{62}
+\subsubsecentry{Placing the Call}{5}{7}{3}{2}{64}
+\subsubsecentry{Logging In}{5}{7}{3}{3}{65}
+\subsecentry{Accepting a Call}{5}{7}{4}{66}
+\subsecentry{Protocol Selection}{5}{7}{5}{67}
+\subsecentry{File Transfer Control}{5}{7}{6}{72}
+\subsecentry{Miscellaneous sys File Commands}{5}{7}{7}{75}
+\subsecentry{Default sys File Values}{5}{7}{8}{76}
+\secentry{The Port Configuration File}{5}{8}{76}
+\secentry{The Dialer Configuration File}{5}{9}{80}
+\secentry{UUCP Over TCP}{5}{10}{82}
+\subsecentry{Connecting to Another System Over TCP}{5}{10}{1}{82}
+\subsecentry{Running a TCP Server}{5}{10}{2}{83}
+\secentry{Security}{5}{11}{83}
+\chapentry{UUCP Protocol Internals}{6}{87}
+\secentry{UUCP Protocol Sources}{6}{1}{87}
+\secentry{UUCP Grades}{6}{2}{88}
+\secentry{UUCP Lock Files}{6}{3}{89}
+\secentry{Execution File Format}{6}{4}{90}
+\secentry{UUCP Protocol}{6}{5}{92}
+\subsecentry{The Initial Handshake}{6}{5}{1}{92}
+\subsecentry{UUCP Protocol Commands}{6}{5}{2}{95}
+\subsubsecentry{The S Command}{6}{5}{2}{1}{95}
+\subsubsecentry{The R Command}{6}{5}{2}{2}{98}
+\subsubsecentry{The X Command}{6}{5}{2}{3}{99}
+\subsubsecentry{The E Command}{6}{5}{2}{4}{100}
+\subsubsecentry{The H Command}{6}{5}{2}{5}{101}
+\subsecentry{The Final Handshake}{6}{5}{3}{101}
+\secentry{UUCP \samp {g} Protocol}{6}{6}{101}
+\secentry{UUCP \samp {f} Protocol}{6}{7}{105}
+\secentry{UUCP \samp {t} Protocol}{6}{8}{106}
+\secentry{UUCP \samp {e} Protocol}{6}{9}{107}
+\secentry{UUCP \samp {G} Protocol}{6}{10}{107}
+\secentry{UUCP \samp {i} Protocol}{6}{11}{107}
+\secentry{UUCP \samp {j} Protocol}{6}{12}{110}
+\secentry{UUCP \samp {x} Protocol}{6}{13}{112}
+\secentry{UUCP \samp {y} Protocol}{6}{14}{112}
+\secentry{UUCP \samp {d} Protocol}{6}{15}{114}
+\secentry{UUCP \samp {h} Protocol}{6}{16}{114}
+\secentry{UUCP \samp {v} Protocol}{6}{17}{114}
+\chapentry{Hacking Taylor UUCP}{7}{115}
+\secentry{System Dependence}{7}{1}{115}
+\secentry{Naming Conventions}{7}{2}{115}
+\secentry{Patches}{7}{3}{116}
+\chapentry{Acknowledgements}{8}{119}
+\unnumbchapentry{Concept Index}{125}
+\unnumbchapentry{Configuration File Index}{127}

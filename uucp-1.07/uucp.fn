@@ -1,0 +1,136 @@
+\entry{chat}{52}{\code {chat}}
+\entry{chat-timeout}{54}{\code {chat-timeout}}
+\entry{chat-fail}{54}{\code {chat-fail}}
+\entry{chat-seven-bit}{54}{\code {chat-seven-bit}}
+\entry{chat-program}{54}{\code {chat-program}}
+\entry{nodename}{55}{\code {nodename}}
+\entry{hostname}{55}{\code {hostname}}
+\entry{uuname}{55}{\code {uuname}}
+\entry{spool}{56}{\code {spool}}
+\entry{pubdir in config file}{56}{\code {pubdir in config file}}
+\entry{lockdir}{56}{\code {lockdir}}
+\entry{unknown}{56}{\code {unknown}}
+\entry{strip-login}{56}{\code {strip-login}}
+\entry{strip-proto}{56}{\code {strip-proto}}
+\entry{max-uuxqts}{56}{\code {max-uuxqts}}
+\entry{run-uuxqt}{57}{\code {run-uuxqt}}
+\entry{timetable}{57}{\code {timetable}}
+\entry{v2-files}{57}{\code {v2-files}}
+\entry{hdb-files}{57}{\code {hdb-files}}
+\entry{sysfile}{57}{\code {sysfile}}
+\entry{portfile}{58}{\code {portfile}}
+\entry{dialfile}{58}{\code {dialfile}}
+\entry{dialcodefile}{58}{\code {dialcodefile}}
+\entry{callfile}{58}{\code {callfile}}
+\entry{passwdfile}{58}{\code {passwdfile}}
+\entry{logfile}{59}{\code {logfile}}
+\entry{statfile}{59}{\code {statfile}}
+\entry{debugfile}{59}{\code {debugfile}}
+\entry{debug in config file}{59}{\code {debug in config file}}
+\entry{system}{62}{\code {system}}
+\entry{alternate}{62}{\code {alternate}}
+\entry{default-alternates}{62}{\code {default-alternates}}
+\entry{alias}{62}{\code {alias}}
+\entry{myname}{62}{\code {myname}}
+\entry{time}{62}{\code {time}}
+\entry{timegrade}{63}{\code {timegrade}}
+\entry{max-retries}{63}{\code {max-retries}}
+\entry{call-timegrade}{63}{\code {call-timegrade}}
+\entry{called-timegrade}{64}{\code {called-timegrade}}
+\entry{speed in sys file}{64}{\code {speed in sys file}}
+\entry{baud in sys file}{64}{\code {baud in sys file}}
+\entry{port in sys file}{64}{\code {port in sys file}}
+\entry{phone}{65}{\code {phone}}
+\entry{address}{65}{\code {address}}
+\entry{chat in sys file}{65}{\code {chat in sys file}}
+\entry{chat-timeout in sys file}{65}{\code {chat-timeout in sys file}}
+\entry{chat-fail in sys file}{65}{\code {chat-fail in sys file}}
+\entry{chat-seven-bit in sys file}{65}{\code {chat-seven-bit in sys file}}
+\entry{chat-program in sys file}{65}{\code {chat-program in sys file}}
+\entry{call-login}{66}{\code {call-login}}
+\entry{call-password}{66}{\code {call-password}}
+\entry{called-login}{67}{\code {called-login}}
+\entry{callback}{67}{\code {callback}}
+\entry{called-chat}{67}{\code {called-chat}}
+\entry{called-chat-timeout}{67}{\code {called-chat-timeout}}
+\entry{called-chat-fail}{67}{\code {called-chat-fail}}
+\entry{called-chat-seven-bit}{67}{\code {called-chat-seven-bit}}
+\entry{called-chat-program}{67}{\code {called-chat-program}}
+\entry{protocol in sys file}{67}{\code {protocol in sys file}}
+\entry{protocol-parameter in sys file}{69}{\code {protocol-parameter in sys file}}
+\entry{send-request}{72}{\code {send-request}}
+\entry{receive-request}{72}{\code {receive-request}}
+\entry{request}{72}{\code {request}}
+\entry{call-transfer}{73}{\code {call-transfer}}
+\entry{called-transfer}{73}{\code {called-transfer}}
+\entry{transfer}{73}{\code {transfer}}
+\entry{call-local-size}{73}{\code {call-local-size}}
+\entry{call-remote-size}{73}{\code {call-remote-size}}
+\entry{called-local-size}{73}{\code {called-local-size}}
+\entry{called-remote-size}{73}{\code {called-remote-size}}
+\entry{local-send}{73}{\code {local-send}}
+\entry{remote-send}{74}{\code {remote-send}}
+\entry{local-receive}{74}{\code {local-receive}}
+\entry{remote-receive}{74}{\code {remote-receive}}
+\entry{forward-to}{74}{\code {forward-to}}
+\entry{forward-from}{74}{\code {forward-from}}
+\entry{forward}{74}{\code {forward}}
+\entry{max-file-time}{74}{\code {max-file-time}}
+\entry{sequence}{75}{\code {sequence}}
+\entry{command-path}{75}{\code {command-path}}
+\entry{commands}{75}{\code {commands}}
+\entry{free-space}{75}{\code {free-space}}
+\entry{pubdir in sys file}{75}{\code {pubdir in sys file}}
+\entry{debug in sys file}{75}{\code {debug in sys file}}
+\entry{max-remote-debug}{75}{\code {max-remote-debug}}
+\entry{port in port file}{76}{\code {port in port file}}
+\entry{type}{76}{\code {type}}
+\entry{protocol in port file}{77}{\code {protocol in port file}}
+\entry{protocol-parameter in port file}{77}{\code {protocol-parameter in port file}}
+\entry{seven-bit in port file}{77}{\code {seven-bit in port file}}
+\entry{reliable in port file}{77}{\code {reliable in port file}}
+\entry{half-duplex in port file}{77}{\code {half-duplex in port file}}
+\entry{device}{77}{\code {device}}
+\entry{speed in port file}{77}{\code {speed in port file}}
+\entry{baud in port file}{77}{\code {baud in port file}}
+\entry{speed-range}{77}{\code {speed-range}}
+\entry{baud-range}{77}{\code {baud-range}}
+\entry{carrier in port file}{78}{\code {carrier in port file}}
+\entry{hardflow}{78}{\code {hardflow}}
+\entry{dial-device}{78}{\code {dial-device}}
+\entry{dialer in port file}{78}{\code {dialer in port file}}
+\entry{dialer-sequence}{78}{\code {dialer-sequence}}
+\entry{lockname}{79}{\code {lockname}}
+\entry{service}{79}{\code {service}}
+\entry{version}{79}{\code {version}}
+\entry{push}{79}{\code {push}}
+\entry{stream}{79}{\code {stream}}
+\entry{server-address}{79}{\code {server-address}}
+\entry{command}{80}{\code {command}}
+\entry{dialer in dial file}{80}{\code {dialer in dial file}}
+\entry{chat in dial file}{80}{\code {chat in dial file}}
+\entry{chat-timeout in dial file}{80}{\code {chat-timeout in dial file}}
+\entry{chat-fail in dial file}{80}{\code {chat-fail in dial file}}
+\entry{chat-seven-bit in dial file}{80}{\code {chat-seven-bit in dial file}}
+\entry{chat-program in dial file}{80}{\code {chat-program in dial file}}
+\entry{dialtone}{81}{\code {dialtone}}
+\entry{pause}{81}{\code {pause}}
+\entry{carrier in dial file}{81}{\code {carrier in dial file}}
+\entry{carrier-wait}{81}{\code {carrier-wait}}
+\entry{dtr-toggle}{81}{\code {dtr-toggle}}
+\entry{complete-chat}{81}{\code {complete-chat}}
+\entry{complete-chat-timeout}{81}{\code {complete-chat-timeout}}
+\entry{complete-chat-fail}{81}{\code {complete-chat-fail}}
+\entry{complete-chat-seven-bit}{81}{\code {complete-chat-seven-bit}}
+\entry{complete-chat-program}{81}{\code {complete-chat-program}}
+\entry{complete}{82}{\code {complete}}
+\entry{abort-chat}{82}{\code {abort-chat}}
+\entry{abort-chat-timeout}{82}{\code {abort-chat-timeout}}
+\entry{abort-chat-fail}{82}{\code {abort-chat-fail}}
+\entry{abort-chat-seven-bit}{82}{\code {abort-chat-seven-bit}}
+\entry{abort-chat-program}{82}{\code {abort-chat-program}}
+\entry{abort}{82}{\code {abort}}
+\entry{protocol-parameter in dial file}{82}{\code {protocol-parameter in dial file}}
+\entry{seven-bit in dial file}{82}{\code {seven-bit in dial file}}
+\entry{reliable in dial file}{82}{\code {reliable in dial file}}
+\entry{half-duplex in dial file}{82}{\code {half-duplex in dial file}}

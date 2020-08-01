@@ -8,7 +8,8 @@ sbin_SCRIPTS = uusched
 bin_PROGRAMS = uux uucp uustat uuname uulog uupick cu
 bin_SCRIPTS = uuto
 noinst_PROGRAMS = tstuu
-info_TEXINFOS = uucp.texi
+#info_TEXINFOS = uucp.texi
+info_TEXINFOS =
 man_MANS = uux.1 uucp.1 uustat.1 cu.1 uucico.8 uuxqt.8
 
 # If you do not have the mkdir system call, this will install uudir as

@@ -1,0 +1,151 @@
+\initial {A}
+\entry{\code {abort}}{82}
+\entry{\code {abort-chat}}{82}
+\entry{\code {abort-chat-fail}}{82}
+\entry{\code {abort-chat-program}}{82}
+\entry{\code {abort-chat-seven-bit}}{82}
+\entry{\code {abort-chat-timeout}}{82}
+\entry{\code {address}}{65}
+\entry{\code {alias}}{62}
+\entry{\code {alternate}}{62}
+\initial {B}
+\entry{\code {baud in port file}}{77}
+\entry{\code {baud in sys file}}{64}
+\entry{\code {baud-range}}{77}
+\initial {C}
+\entry{\code {call-local-size}}{73}
+\entry{\code {call-login}}{66}
+\entry{\code {call-password}}{66}
+\entry{\code {call-remote-size}}{73}
+\entry{\code {call-timegrade}}{63}
+\entry{\code {call-transfer}}{73}
+\entry{\code {callback}}{67}
+\entry{\code {called-chat}}{67}
+\entry{\code {called-chat-fail}}{67}
+\entry{\code {called-chat-program}}{67}
+\entry{\code {called-chat-seven-bit}}{67}
+\entry{\code {called-chat-timeout}}{67}
+\entry{\code {called-local-size}}{73}
+\entry{\code {called-login}}{67}
+\entry{\code {called-remote-size}}{73}
+\entry{\code {called-timegrade}}{64}
+\entry{\code {called-transfer}}{73}
+\entry{\code {callfile}}{58}
+\entry{\code {carrier in dial file}}{81}
+\entry{\code {carrier in port file}}{78}
+\entry{\code {carrier-wait}}{81}
+\entry{\code {chat}}{52}
+\entry{\code {chat in dial file}}{80}
+\entry{\code {chat in sys file}}{65}
+\entry{\code {chat-fail}}{54}
+\entry{\code {chat-fail in dial file}}{80}
+\entry{\code {chat-fail in sys file}}{65}
+\entry{\code {chat-program}}{54}
+\entry{\code {chat-program in dial file}}{80}
+\entry{\code {chat-program in sys file}}{65}
+\entry{\code {chat-seven-bit}}{54}
+\entry{\code {chat-seven-bit in dial file}}{80}
+\entry{\code {chat-seven-bit in sys file}}{65}
+\entry{\code {chat-timeout}}{54}
+\entry{\code {chat-timeout in dial file}}{80}
+\entry{\code {chat-timeout in sys file}}{65}
+\entry{\code {command}}{80}
+\entry{\code {command-path}}{75}
+\entry{\code {commands}}{75}
+\entry{\code {complete}}{82}
+\entry{\code {complete-chat}}{81}
+\entry{\code {complete-chat-fail}}{81}
+\entry{\code {complete-chat-program}}{81}
+\entry{\code {complete-chat-seven-bit}}{81}
+\entry{\code {complete-chat-timeout}}{81}
+\initial {D}
+\entry{\code {debug in config file}}{59}
+\entry{\code {debug in sys file}}{75}
+\entry{\code {debugfile}}{59}
+\entry{\code {default-alternates}}{62}
+\entry{\code {device}}{77}
+\entry{\code {dial-device}}{78}
+\entry{\code {dialcodefile}}{58}
+\entry{\code {dialer in dial file}}{80}
+\entry{\code {dialer in port file}}{78}
+\entry{\code {dialer-sequence}}{78}
+\entry{\code {dialfile}}{58}
+\entry{\code {dialtone}}{81}
+\entry{\code {dtr-toggle}}{81}
+\initial {F}
+\entry{\code {forward}}{74}
+\entry{\code {forward-from}}{74}
+\entry{\code {forward-to}}{74}
+\entry{\code {free-space}}{75}
+\initial {H}
+\entry{\code {half-duplex in dial file}}{82}
+\entry{\code {half-duplex in port file}}{77}
+\entry{\code {hardflow}}{78}
+\entry{\code {hdb-files}}{57}
+\entry{\code {hostname}}{55}
+\initial {L}
+\entry{\code {local-receive}}{74}
+\entry{\code {local-send}}{73}
+\entry{\code {lockdir}}{56}
+\entry{\code {lockname}}{79}
+\entry{\code {logfile}}{59}
+\initial {M}
+\entry{\code {max-file-time}}{74}
+\entry{\code {max-remote-debug}}{75}
+\entry{\code {max-retries}}{63}
+\entry{\code {max-uuxqts}}{56}
+\entry{\code {myname}}{62}
+\initial {N}
+\entry{\code {nodename}}{55}
+\initial {P}
+\entry{\code {passwdfile}}{58}
+\entry{\code {pause}}{81}
+\entry{\code {phone}}{65}
+\entry{\code {port in port file}}{76}
+\entry{\code {port in sys file}}{64}
+\entry{\code {portfile}}{58}
+\entry{\code {protocol in port file}}{77}
+\entry{\code {protocol in sys file}}{67}
+\entry{\code {protocol-parameter in dial file}}{82}
+\entry{\code {protocol-parameter in port file}}{77}
+\entry{\code {protocol-parameter in sys file}}{69}
+\entry{\code {pubdir in config file}}{56}
+\entry{\code {pubdir in sys file}}{75}
+\entry{\code {push}}{79}
+\initial {R}
+\entry{\code {receive-request}}{72}
+\entry{\code {reliable in dial file}}{82}
+\entry{\code {reliable in port file}}{77}
+\entry{\code {remote-receive}}{74}
+\entry{\code {remote-send}}{74}
+\entry{\code {request}}{72}
+\entry{\code {run-uuxqt}}{57}
+\initial {S}
+\entry{\code {send-request}}{72}
+\entry{\code {sequence}}{75}
+\entry{\code {server-address}}{79}
+\entry{\code {service}}{79}
+\entry{\code {seven-bit in dial file}}{82}
+\entry{\code {seven-bit in port file}}{77}
+\entry{\code {speed in port file}}{77}
+\entry{\code {speed in sys file}}{64}
+\entry{\code {speed-range}}{77}
+\entry{\code {spool}}{56}
+\entry{\code {statfile}}{59}
+\entry{\code {stream}}{79}
+\entry{\code {strip-login}}{56}
+\entry{\code {strip-proto}}{56}
+\entry{\code {sysfile}}{57}
+\entry{\code {system}}{62}
+\initial {T}
+\entry{\code {time}}{62}
+\entry{\code {timegrade}}{63}
+\entry{\code {timetable}}{57}
+\entry{\code {transfer}}{73}
+\entry{\code {type}}{76}
+\initial {U}
+\entry{\code {unknown}}{56}
+\entry{\code {uuname}}{55}
+\initial {V}
+\entry{\code {v2-files}}{57}
+\entry{\code {version}}{79}
