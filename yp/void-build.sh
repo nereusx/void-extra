@@ -309,3 +309,13 @@ EOF
 #cd $PKG
 #/sbin/makepkg -l y -c n $TMP/yptools-$VERSION-$ARCH-$BUILD.txz
 
+cp -a $PKG/usr/bin/* /usr/bin/
+cp -a $PKG/usr/sbin/* /usr/bin/
+cp -a $PKG/usr/include/* /usr/include/
+cp -a $PKG/usr/lib64/* /usr/lib/
+cp -a $PKG/usr/man/* /usr/share/man/
+cp -a $PKG/usr/doc/* /usr/share/doc/
+cp -a $PKG/usr/share/* /usr/share/
+cp -a $PKG/etc/* /etc/
+cp -a $PKG/var/* /var/
+rm -rf $PKG
