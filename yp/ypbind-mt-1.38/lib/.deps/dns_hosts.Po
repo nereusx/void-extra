@@ -1,0 +1,5 @@
+dns_hosts.o: dns_hosts.c /usr/include/stdc-predef.h ../config.h
+
+/usr/include/stdc-predef.h:
+
+../config.h:

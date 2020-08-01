@@ -142,7 +142,7 @@ echo "+================+"
 cd $TMP
 #rm -rf ypbind-mt-$YPBINDMT
 #tar xvf $CWD/ypbind-mt-$YPBINDMT.tar.?z || exit 1
-cd ypbind-mt-$YPBINDMT || exit 1
+cd $CWD/ypbind-mt-$YPBINDMT || exit 1
 #zcat $CWD/ypbind-mt.gettid.diff.gz | patch -p1 --verbose || exit 1
 ./configure \
   --prefix=/usr \
@@ -205,7 +205,7 @@ echo "+============+"
 cd $TMP
 #rm -rf ypserv-$YPSERV
 #tar xvf $CWD/ypserv-$YPSERV.tar.?z || exit 1
-cd ypserv-$YPSERV || exit 1
+cd $CWD/ypserv-$YPSERV || exit 1
 # --with-ndbm=yes 
 # Support for this was discontinued upstream
 # --enable-tcp-wrapper
