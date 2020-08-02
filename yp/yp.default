@@ -1,6 +1,14 @@
 # This file can be used to tweak the way YP (NIS) services
 # are started.
 #
+
+# enable client
+YP_CLIENT_ENABLE=0
+
+# enable server
+YP_SERVER_ENABLE=0
+
+#
 # Optional arguments to pass ypserv upon startup:
 #YPSERV_OPTS=""
 #

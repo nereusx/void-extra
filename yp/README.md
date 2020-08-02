@@ -4,3 +4,11 @@ NIS stands for Network Information Service. NIS is usually used to
 provide `/etc/passwd` and `/etc/group` information throughout the network.
 Most Sun-based networks run NIS, and Linux machines can take full
 advantage of existing NIS service or provide NIS service themselves.
+
+Configure
+
+1. Edit /etc/defaultdomain
+
+1. Make sure the portmapper (rpcbind) (portmap(8)) is running, and start the server ypserv. The command
+
+    % rpcinfo -u localhost ypserv

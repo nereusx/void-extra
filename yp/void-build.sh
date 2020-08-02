@@ -319,3 +319,6 @@ cp -a $PKG/usr/share/* /usr/share/
 cp -a $PKG/etc/* /etc/
 cp -a $PKG/var/* /var/
 rm -rf $PKG
+cp $CWD/nisdomainname /usr/sbin/
+ln -sf /usr/sbin/nisdomainname /usr/sbin/domainname
+
