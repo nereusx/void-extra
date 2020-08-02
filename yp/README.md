@@ -30,7 +30,11 @@ Configure
 
 1.1. create /etc/netgroup
 	https://www.ibm.com/support/knowledgecenter/ssw_aix_72/filesreference/netgroup.html
-	
+
+1.1.
+
+	touch /etc/publickey
+
 1.1. if /etc/mail does not exists just link it to where the mail aliases file exists
 
 	ln -s /etc/postfix /etc/mail
