@@ -1,0 +1,182 @@
+'\" t
+.\"     Title: ypxfr
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 08/05/2020
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"  Language: English
+.\"
+.TH "YPXFR" "8" "08/05/2020" "NIS Reference Manual" "NIS Reference Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ypxfr \- transfer NIS database from remote server to local host
+.SH "SYNOPSIS"
+.HP \w'\fB/usr/lib/yp/ypxfr\fR\ 'u
+\fB/usr/lib/yp/ypxfr\fR [\-f] [\-c] [\-d\ \fItarget\fR\ \fIdomain\fR] [\-h\ \fIsource\fR\ \fIhost\fR] [\-s\ \fIsource\fR\ \fIdomain\fR] [\-C\ \fItaskid\fR\ \fIprogram\-number\fR\ \fIhost\fR\ \fIport\fR] [\-p\ \fIyp_path\fR] \fImapname\fR...
+.br
+
+.SH "DESCRIPTION"
+.PP
+\fBypxfr\fR
+copies an NIS database from one NIS server to the local host by using the NIS service\&.
+\fBypxfr\fR
+is generally invoked by
+\fBypinit\fR
+or by
+\fBypserv,\fR
+when
+\fBypserv\fR
+receives a map transfer request from
+\fByppush\&.\fR
+It creates a temporary map in the directory
+/var/yp/domain
+(this directory must already exist;
+\fIdomain\fR
+is the default domainname for the local host), fills it by getting the map\*(Aqs entries and fetches the map parameters (master and order number)\&. If the transfer was successful, the old version of the map will be deleted and the temporary copy will be moved into its place\&. Then,
+\fBypxfr\fR
+will attempt to send a "clear current map" request to the local
+\fBypserv\&.\fR
+.PP
+If run interactively,
+\fBypxfr\fR
+writes its output to stderr\&. However, if it is invoked without a controlling terminal, it will log the output to syslog\&.
+.PP
+\fBypxfr\fR
+is used primarily in environments where several NIS servers are in use\&. For all maps, you have a NIS master server, which maintains a canonical copy of the NIS map, and all the other servers, the NIS slaves, copy the new version of the map from the master whenever a update was made\&. Normally, you have one NIS master for all maps\&.
+.PP
+In order to maintain consistency across all NIS servers,
+\fBypxfr\fR
+can be run periodically in a
+\fBcron\fR
+job\&. Maps which change infrequently need only be updated once a day (preferably late at night when system usage is lowest), where those with frequent changes (such as
+\fIpasswd\&.byname\fR
+and
+\fIpasswd\&.byuid )\fR
+should be updated perhaps once every hour\&. Examples are in
+/usr/lib/yp: ypxfr_1perday, ypxfr_2perday,
+and
+\fBypxfr_1perhour\&.\fR
+They can serve as reasonable first cuts\&.
+.PP
+Normally all updates should be propagated by
+\fByppush\fR
+when
+/var/yp/Makefile
+is run on the NIS master server, however it is a good practice on large networks where possible outages could cause NIS slaves to fall out of sync with the master\&.
+.SH "OPTIONS"
+.PP
+The following options are supported:
+.PP
+\fB\-f\fR
+.RS 4
+Force a map transfer\&. Normally,
+\fBypxfr\fR
+will not transfer a map if it determines that the NIS master\*(Aqs copy is not newer than the existing copy already on the local host\&. This flag forces a transfer regardless of which server\*(Aqs version is more recent\&.
+.RE
+.PP
+\fB\-c\fR
+.RS 4
+Do not send a "clear current map" request to the
+\fBypserv\fR
+process running on the local host\&. This flag is normally used when invoking
+\fBypxfr\fR
+by
+\fBypinit\fR
+or if
+\fBypserv\fR
+is not running locally at the time you are running
+\fBypxfr\&.\fR
+Otherwise,
+\fBypxfr\fR
+will complain that it cannot talk to the local
+\fBypserv,\fR
+and the transfer will fail\&.
+.RE
+.PP
+\fB\-d\fR\fI domain\fR
+.RS 4
+Specify a domain other than the default NIS domain\&.
+.RE
+.PP
+\fB\-h\fR\fI source host\fR
+.RS 4
+Get the map from
+\fIhost\fR, regardless of what the map says the master is\&. If
+\fIhost\fR
+is not specified,
+\fBypxfr\fR
+asks the
+NIS
+service for the name of the master, and tries to get the map from there\&. This option is used to insure that ypxfr only copies maps from the NIS master server\&.
+.RE
+.PP
+\fB\-s\fR\fI source domain\fR
+.RS 4
+Specify a source domain from which to transfer a map that should be the same across domains\&.
+.RE
+.PP
+\fB\-C\fR\fI taskid progam\-number host port\fR
+.RS 4
+This option is
+\fBonly\fR
+for use by
+\fBypserv \&.\fR
+When
+\fBypserv\fR
+invokes
+\fBypxfr\fR, it specifies that
+\fBypxfr\fR
+should call back a
+\fByppush\fR
+process at the host with
+IP
+address or name
+\fIhost\fR, registered as program number
+\fIprogam\-number\fR, listening on port
+\fIport\fR, and waiting for a response to transaction
+\fItaskid\fR\&.
+.RE
+.PP
+\fB\-p\fR\fI yp_path\fR
+.RS 4
+Change the directory for the maps to
+\fIyp_path/[domainname]/\fR, the default is
+/var/yp/[domainname]\&.
+.RE
+.PP
+\fImapname\fR
+.RS 4
+One or more names of the map to transfer\&.
+.RE
+.SH "FILES"
+.PP
+/var/yp/[domainname]/[maps]
+.SH "SEE ALSO"
+.PP
+\fBypserv\fR(8),
+\fByppush\fR(8),
+\fBypinit\fR(8),
+\fBcron\fR(8),
+\fBcrontab\fR(5)
+.SH "AUTHOR"
+.PP
+Thorsten Kukuk <kukuk@linux\-nis\&.org>

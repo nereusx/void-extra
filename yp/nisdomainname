@@ -1,5 +1,0 @@
-#!/bin/sh
-if [ $# -gt 0 ]; then
-	echo $1 > /etc/defaultdomain
-fi
-cat /etc/defaultdomain

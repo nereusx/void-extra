@@ -1,0 +1,84 @@
+'\" t
+.\"     Title: yphelper
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 08/05/2020
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"  Language: English
+.\"
+.TH "YPHELPER" "8" "08/05/2020" "NIS Reference Manual" "NIS Reference Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+yphelper \- helper application for internal use
+.SH "DESCRIPTION"
+.PP
+\fByphelper\fR
+is a internal helper application for ypserv and should not be used by the normal user or system administrator\&.
+.SH "OPTIONS"
+.PP
+\fB\-d \fR\fIdomainname\fR
+.RS 4
+Use
+\fIdomainname\fR
+as default domain\&.
+.RE
+.PP
+\fB\-h\fR
+.RS 4
+Print the canonical hostname\&.
+.RE
+.PP
+\fB\-i \fR\fImap\fR
+.RS 4
+Return \*(Aq0\*(Aq if we are the NIS master of
+\fImap\fR
+or \*(Aq1\*(Aq if not\&.
+.RE
+.PP
+\fB\-m \fR\fImaster\fR
+.RS 4
+Print the name of all NIS maps where
+\fImaster\fR
+is the NIS master server\&.
+.RE
+.PP
+\fB\-p \fR\fIpasswd\fR\fIshadow\fR
+.RS 4
+Merge the
+\fIpasswd\fR
+and
+\fIshadow\fR
+files\&.
+.RE
+.PP
+\fB\-g \fR\fIgroup\fR\fIgshadow\fR
+.RS 4
+Merge the
+\fIgroup\fR
+and
+\fIgshadow\fR
+files\&.
+.RE
+.SH "AUTHOR"
+.PP
+\fByphelper\fR
+was written by Thorsten Kukuk <kukuk@linux\-nis\&.org>\&.

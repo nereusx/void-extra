@@ -1,8 +1,0 @@
-ypserv-reg_slp.o: reg_slp.c /usr/include/stdc-predef.h ../config.h \
- ../conf_post.h
-
-/usr/include/stdc-predef.h:
-
-../config.h:
-
-../conf_post.h:

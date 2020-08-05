@@ -1,0 +1,90 @@
+'\" t
+.\"     Title: ypinit
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 08/05/2020
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"  Language: English
+.\"
+.TH "YPINIT" "8" "08/05/2020" "NIS Reference Manual" "NIS Reference Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ypinit \- NIS database install and build program
+.SH "SYNOPSIS"
+.HP \w'\fB/usr/lib/yp/ypinit\fR\ 'u
+\fB/usr/lib/yp/ypinit\fR [\-m] [\-s\ \fImaster_name\fR]
+.SH "DESCRIPTION"
+.PP
+\fBypinit\fR
+builds the domain subdirectory of
+/var/yp
+for the current default domain\&. After building the domain subdirectory,
+\fBypinit\fR
+builds a complete set of administrative maps for your system and places them in this directory\&. The first map created by
+\fBypinit \-m\fR
+is the ypservers map\&. You should run it as root on the hosts, which should be the master ypserver\&.You should have only one master server per NIS domain\&.
+.PP
+All databases are built from scratch, either from information available to the program at runtime, or from the
+ASCII
+data base files in
+/etc\&. These files are listed below under
+FILES\&.
+.PP
+An
+NIS
+database on a slave server is set up by copying an existing database from a running server\&. The
+\fBmaster_name\fR
+argument should be the hostname of an
+NIS
+server (either the master server for all the maps, or a server on which the data base is up\-to\-date and stable)\&.
+.SH "OPTIONS"
+.PP
+\fB\-m\fR
+.RS 4
+If the local host is the
+NIS
+master\&.
+.RE
+.PP
+\fB\-s\fR
+.RS 4
+Set up a slave server with the database from
+\fImaster_name\fR
+.RE
+.SH "FILES"
+.PP
+/etc/passwd, /etc/group, /etc/hosts, /etc/networks, /etc/services, /etc/protocols, /etc/netgroup, /etc/rpc
+.RS 4
+.RE
+.SH "SEE ALSO"
+.PP
+\fBmakedbm\fR(8),
+\fBrevnetgroup\fR(8),
+\fByppush\fR(8),
+\fBypserv\fR(8),
+\fBypxfr\fR(8)
+.SH "BUGS"
+.PP
+There is no good error handling at the moment\&.
+.SH "AUTHOR"
+.PP
+Thorsten Kukuk <kukuk@linux\-nis\&.org>

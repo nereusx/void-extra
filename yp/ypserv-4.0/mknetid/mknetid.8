@@ -1,0 +1,127 @@
+'\" t
+.\"     Title: mknetid
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 08/05/2020
+.\"    Manual: NIS Reference Manual
+.\"    Source: NIS Reference Manual
+.\"  Language: English
+.\"
+.TH "MKNETID" "8" "08/05/2020" "NIS Reference Manual" "NIS Reference Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+mknetid \- generate data for netid map
+.SH "SYNOPSIS"
+.HP \w'\fB/usr/lib/yp/mknetid\fR\ 'u
+\fB/usr/lib/yp/mknetid\fR [\-q] [\-h\ \fIhosts\fR] [\-p\ \fIpasswd\fR] [\-g\ \fIgroup\fR] [\-d\ \fIdomain\fR] [\-n\ \fInetid\fR]
+.HP \w'\fB/usr/lib/yp/mknetid\fR\ 'u
+\fB/usr/lib/yp/mknetid\fR \-\-version
+.SH "DESCRIPTION"
+.PP
+\fBmknetid\fR
+generates the
+\fInetid\&.byname\fR
+NIS map from the contents of the group(5), passwd(5), hosts(5) and netid files\&. It checks for multiple entrys of netids and warn for them or filters them out\&. It is only called by
+/var/yp/Makefile
+when rebuilding the NIS map\&.
+.SH "OPTIONS"
+.PP
+\fB\-q\fR
+.RS 4
+This flag turns on \*(Aqquiet\*(Aq mode, don\*(Aqt print a warning message when finding an duplicate netid entry\&.
+.RE
+.PP
+\fB\-h\fR\fI hosts\fR
+.RS 4
+The
+\fB\-h\fR
+flag can be used to specify the use of another hosts file than the default
+/etc/hosts\&.
+.RE
+.PP
+\fB\-p\fR\fI passwd\fR
+.RS 4
+The
+\fB\-p\fR
+flag can be used to specify the use of another passwd file than the default
+/etc/passwd\&.
+.RE
+.PP
+\fB\-g\fR\fI group\fR
+.RS 4
+The
+\fB\-g\fR
+flag can be used to specify the use of another group file than the default
+/etc/group\&.
+.RE
+.PP
+\fB\-n\fR\fI netid\fR
+.RS 4
+The
+\fB\-n\fR
+flag can be used to specify the use of another netid file than the default
+/etc/netid\&.
+.RE
+.PP
+\fB\-d\fR\fI domain\fR
+.RS 4
+The
+\fBmknetid\fR
+command uses the system domainname by default\&. If it is not set or you whish to override it, you must use the
+\fB\-d\fR
+parameter\&.
+.RE
+.PP
+\fB\-\-version\fR
+.RS 4
+Prints the version number
+.RE
+.SH "FILES"
+.PP
+/etc/group
+.RS 4
+groups file
+.RE
+.PP
+/etc/hosts
+.RS 4
+hosts database
+.RE
+.PP
+/etc/netid
+.RS 4
+netname database
+.RE
+.PP
+/etc/passwd
+.RS 4
+password file
+.RE
+.SH "SEE ALSO"
+.PP
+\fBpasswd\fR(8),
+\fBgroup\fR(5),
+\fBhosts\fR(5),
+\fBpasswd\fR(5)
+.SH "AUTHOR"
+.PP
+\fBmknetid\fR
+was written by Thorsten Kukuk <kukuk@linux\-nis\&.org>\&.

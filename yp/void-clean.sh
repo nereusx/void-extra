@@ -1,9 +1,9 @@
 #!/bin/sh
-cd ypbind-mt-1.38
+cd ypbind-mt-2.4
 make clean
 cd ..
-cd ypserv-2.32.1
+cd ypserv-4.0
 make clean
 cd ..
-cd yp-tools-2.14
+cd yp-tools-4.2.2
 make clean

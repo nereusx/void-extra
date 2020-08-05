@@ -1,0 +1,9 @@
+     ../lib/nicknames.c \
+     ../src/domainname.c \
+     ../src/ypcat.c \
+     ../src/ypmatch.c \
+     ../src/yppasswd.c \
+     ../src/yppoll.c \
+     ../src/ypset.c \
+     ../src/yptest.c \
+     ../src/ypwhich.c
