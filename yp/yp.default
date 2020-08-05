@@ -3,7 +3,7 @@
 #
 
 # enable client
-YP_CLIENT_ENABLE=0
+YP_CLIENT_ENABLE=1
 
 # enable server
 YP_SERVER_ENABLE=0
