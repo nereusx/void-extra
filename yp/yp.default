@@ -43,3 +43,4 @@ YP_SERVER_ENABLE=0
 # is to use -broadcast if YPBIND_OPTS is not set. This ignores
 # /etc/yp.conf and broadcasts across the network to find a server.
 #YPBIND_OPTS="-broadcast"
+YPBIND_OPTS=""

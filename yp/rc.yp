@@ -25,6 +25,8 @@ YP_XFRD_ENABLE=0
 
 PID_PATH=/var/run
 
+YPBIND_OPTS="-broadcast"
+
 # Source options. Doing this here makes it possible
 # to override YP_*_ENABLE set above
 if [ -r /etc/default/yp ]; then
@@ -67,9 +69,6 @@ yp_start() {
     # If you are a NIS client, all you need to do is run ypbind.
     # Your NIS server might also be a client.
     if [ -d /var/yp ]; then
-      if [ -z "$YPBIND_OPTS" ]; then
-        YPBIND_OPTS="-broadcast"
-      fi
       echo "Starting NIS services:  /usr/sbin/ypbind $YPBIND_OPTS"
       /usr/sbin/ypbind $YPBIND_OPTS
     fi
