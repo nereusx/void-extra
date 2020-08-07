@@ -1,0 +1,12 @@
+# Access Control Files
+ 
+The access control software consults two files. The search stops at the first match.
+ 
+Access will be granted when a (daemon,client) pair matches an entry in the /etc/hosts.allow file.
+ 
+Otherwise, access will be denied when a (daemon,client) pair matches an entry in the /etc/hosts.deny file.
+ 
+Otherwise, access will be granted.
+ 
+A non-existing access control file is treated as if it were an empty file.
+Thus, access control can be turned off by providing no access control files.
